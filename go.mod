@@ -1,4 +1,4 @@
-module github.com/yandex/pandora
+module github.com/fesd/pandora
 
 require (
 	github.com/asaskevich/govalidator v0.0.0-20171111151018-521b25f4b05f
