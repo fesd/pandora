@@ -88,6 +88,30 @@ func (s *Sample) setRTT() {
 	}
 }
 
+func (s *Sample) SetUserDuration(d time.Duration) {
+	s.setDuration(keyRTTMicro, d)
+}
+
+func (s *Sample) SetUserProto(code int) {
+	s.set(keyProtoCode, code)
+}
+
+func (s *Sample) SetUserNet(code int) {
+	s.set(keyErrno, code)
+}
+
+func (s *Sample) SetLatency(d time.Duration) {
+	s.setDuration(keyLatencyMicro, d)
+}
+
+func (s *Sample) SetRequestBytes(b int) {
+	s.set(keyRequestBytes, b)
+}
+
+func (s *Sample) SetResponceBytes(b int) {
+	s.set(keyResponseBytes, b)
+}
+
 func (s *Sample) String() string {
 	return string(appendPhout(s, nil, true))
 }
